@@ -13,6 +13,12 @@ header {
   font-weight: bold;
   border-bottom: 5px solid #16a085;
 }
+.subheader {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 10px;
+  color: #bdc3c7;
+}
 .green {
   color: #4CAF50;
 }
