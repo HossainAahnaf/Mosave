@@ -24,16 +24,16 @@ h1, h2, h3 {
 
 /* Split logo colors */
 .logo-mo {
-  color: #1e90ff; /* blue */
+  color: #87ceeb; /* light blue for contrast */
 }
 
 .logo-save {
-  color: #00b894; /* green */
+  color: #98fb98; /* light green for contrast */
 }
 
 /* Header styles */
 header {
-  background: white;
+  background: #4a5568;
   padding: 20px 40px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -56,7 +56,7 @@ header {
 }
 
 .navbar a {
-  color: #333;
+  color: white;
   font-weight: 600;
   text-decoration: none;
   font-size: 16px;
