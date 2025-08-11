@@ -1,7 +1,6 @@
-/* Fonts */
 body, p, a, ul, li {
   font-family: 'Inter', sans-serif;
-  color: #111827; /* dark gray for text */
+  color: #333;
   margin: 0;
   padding: 0;
   line-height: 1.5;
@@ -11,11 +10,11 @@ body, p, a, ul, li {
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #1e90ff; /* bright blue */
+  color: #1e90ff; /* default heading color (blue) */
   margin-bottom: 0.5em;
 }
 
-/* Logo styling */
+/* Bold logo */
 .logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
@@ -23,6 +22,7 @@ h1, h2, h3 {
   user-select: none;
 }
 
+/* Split logo colors */
 .logo-mo {
   color: #1e90ff; /* blue */
 }
@@ -33,9 +33,9 @@ h1, h2, h3 {
 
 /* Header styles */
 header {
-  background: #1a2a45; /* soft navy */
+  background: white;
   padding: 20px 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .navbar {
@@ -56,7 +56,7 @@ header {
 }
 
 .navbar a {
-  color: #d1d5db; /* light gray text on navy */
+  color: #333;
   font-weight: 600;
   text-decoration: none;
   font-size: 16px;
@@ -65,7 +65,7 @@ header {
 
 .navbar a.active,
 .navbar a:hover {
-  color: #00b894; /* green accent on hover */
+  color: #1e90ff;
 }
 
 /* Hero section */
@@ -113,123 +113,43 @@ header {
   flex: 1;
   text-align: center;
   max-width: 250px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .feature h3 {
   margin-bottom: 0.5em;
-  color: #00b894; /* green accent */
+  color: #00b894; /* green accent for feature titles */
 }
 
-/* About page styles */
-main {
-  max-width: 1100px;
-  margin: 40px auto 60px;
-  padding: 0 20px;
-}
-
-.about-hero {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 40px 0;
-}
-
-.about-text {
-  flex: 1 1 400px;
-}
-
-.about-text h2 {
-  font-size: 42px;
-  font-weight: 900;
-  color: #1e90ff;
-  margin-bottom: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.about-text p {
-  font-size: 18px;
-  margin-bottom: 25px;
-  color: #111827;
-}
-
-.benefits-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 30px;
-}
-
-.benefits-list li {
-  font-size: 18px;
-  margin-bottom: 12px;
-  position: relative;
-  padding-left: 28px;
-  color: #111827;
-}
-
-.benefits-list li::before {
-  content: "✔️";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 20px;
-  color: #00b894;
-}
-
-.cta-btn {
-  background: #00b894;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 18px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.cta-btn:hover {
-  background: #019870;
-}
-
-.about-image {
-  flex: 1 1 350px;
+/* About section */
+.about {
+  padding: 40px 20px;
   text-align: center;
-}
-
-.about-image img {
-  max-width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-/* About details section */
-.about-details {
-  padding-top: 40px;
-  border-top: 2px solid #00b894;
-  text-align: center;
-}
-
-.about-details h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  color: #1e90ff;
-  margin-bottom: 20px;
-}
-
-.about-details p {
-  font-size: 18px;
   max-width: 700px;
-  margin: 0 auto 20px auto;
-  color: #111827;
+  margin: 0 auto;
+}
+
+/* Testimonials section */
+.testimonials {
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+}
+
+.testimonials blockquote {
+  font-style: italic;
+  margin: 20px 0;
+  padding: 0 20px;
+  color: #666;
 }
 
 /* Footer */
 footer {
-  background: #1a2a45; /* soft navy */
-  color: #d1d5db; /* light gray */
+  background: #1e90ff;
+  color: white;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   font-size: 14px;
 }
