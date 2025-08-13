@@ -1,155 +1,306 @@
+/* Fonts and basic styles */
+/* Use Inter font for normal text and dark gray color */
 body, p, a, ul, li {
   font-family: 'Inter', sans-serif;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
+  color: #111827; /* dark gray */
+  margin: 0; /* no extra space around elements */
+  padding: 0; /* no extra space inside elements */
+  line-height: 1.5; /* space between lines */
 }
 
-/* Headings use Montserrat */
+/* Use Montserrat font for headings (titles) */
+/* Make headings bold and bright blue */
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #1e90ff; /* default heading color (blue) */
-  margin-bottom: 0.5em;
+  font-weight: 700; /* bold text */
+  color: #1e90ff; /* bright blue */
+  margin-bottom: 8px; /* space below headings */
 }
 
-/* Bold logo */
+/* Logo styling */
+/* Use Montserrat and extra bold for the logo text */
 .logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 28px;
-  user-select: none;
+  user-select: none; /* prevent highlighting the logo */
 }
 
-/* Split logo colors */
+/* Color the "Mo" part blue and the "Save" part green */
 .logo-mo {
-  color: #87ceeb; /* light blue for contrast */
+  color: #1e90ff; /* blue */
 }
 
 .logo-save {
-  color: #98fb98; /* light green for contrast */
+  color: #00b894; /* green */
 }
 
-/* Header styles */
+/* Header section */
+/* Dark blue background with padding and subtle shadow */
 header {
-  background: #4a5568;
+  background: #1a2a45; /* soft navy */
   padding: 20px 40px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* subtle shadow */
 }
 
+/* Navbar container */
+/* Center the content and space out items */
 .navbar {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* space between logo and menu */
   align-items: center;
 }
 
 /* Navigation menu */
+/* Horizontal list with space between items */
 .navbar ul {
-  list-style: none;
+  list-style: none; /* remove bullets */
   display: flex;
-  gap: 25px;
+  gap: 25px; /* space between links */
   margin: 0;
   padding: 0;
 }
 
+/* Navigation links style */
 .navbar a {
-  color: white;
+  color: #d1d5db; /* light gray text */
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: none; /* remove underline */
   font-size: 16px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* smooth color change */
 }
 
+/* Change color when hovering or active */
 .navbar a.active,
 .navbar a:hover {
-  color: #1e90ff;
+  color: #00b894; /* green */
 }
 
 /* Hero section */
+/* Centered text with white background and padding */
 .hero {
   text-align: center;
   padding: 60px 20px;
   background: white;
 }
 
+/* Hero heading */
 .hero h2 {
   color: #1e90ff;
   font-size: 36px;
-  margin-bottom: 0.5em;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
+/* Subheading */
+.testimonials {
+  text-align: center;
+  margin: 0 auto; /* center the container */
+  padding: 40px 20px;
+}
+
+/* Call to Action button style */
 .cta-btn {
   display: inline-block;
-  background: #00b894;
+  background: #00b894; /* green button */
   color: white;
   padding: 12px 20px;
   margin-top: 20px;
-  border-radius: 6px;
+  border-radius: 6px; /* rounded corners */
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* smooth hover */
+  cursor: pointer; /* show pointer cursor */
 }
 
+/* Button hover effect */
 .cta-btn:hover {
-  background: #019870;
+  background: #019870; /* darker green */
 }
 
 /* Features section */
+/* Display feature cards in a row with space */
 .features {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 40px 20px;
-  background: #e6f5f4;
+  background: #a3f0eb; /* light greenish background */
 }
 
+/* Individual feature box style */
 .feature {
   background: white;
   padding: 20px;
   border-radius: 8px;
   flex: 1;
+  max-width: 250px; /* max width of each card */
   text-align: center;
-  max-width: 250px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* subtle shadow */
 }
 
+/* Feature heading color */
 .feature h3 {
-  margin-bottom: 0.5em;
-  color: #00b894; /* green accent for feature titles */
+  margin-bottom: 8px;
+  color: #00b894; /* green */
 }
 
-/* About section */
-.about {
-  padding: 40px 20px;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* Testimonials section */
-.testimonials {
-  padding: 40px 20px;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-  background: white;
-}
-
-.testimonials blockquote {
-  font-style: italic;
-  margin: 20px 0;
+/* About page container */
+main {
+  max-width: 1100px;
+  margin: 40px auto 60px;
   padding: 0 20px;
-  color: #666;
 }
 
-/* Footer */
-footer {
-  background: #1e90ff;
+/* About hero section - image and text side by side */
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* stack on smaller screens */
+  padding: 40px 0;
+}
+
+/* About text area size */
+.about-text {
+  flex: 1 1 400px; /* flexible width, minimum 400px */
+}
+
+/* About section heading style */
+.about-text h2 {
+  font-size: 42px;
+  font-weight: 900;
+  color: #1e90ff;
+  margin-bottom: 20px;
+}
+
+/* Paragraph style in about section */
+.about-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #111827; /* dark gray */
+}
+
+/* Benefits list styling */
+/* Remove bullets and space items */
+.benefits-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+/* Each benefit item */
+.benefits-list li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 28px; /* space for the checkmark */
+  color: #111827;
+}
+
+/* Add checkmark before each benefit */
+.benefits-list li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 20px;
+  color: #00b894; /* green */
+}
+
+/* Button style for about page */
+.cta-btn {
+  background: #00b894;
   color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Button hover */
+.cta-btn:hover {
+  background: #019870;
+}
+
+/* About image area */
+.about-image {
+  flex: 1 1 350px;
   text-align: center;
-  padding: 10px;
+}
+
+/* Image style with rounded corners and shadow */
+.about-image img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* About details section with top border */
+.about-details {
+  padding-top: 40px;
+  border-top: 2px solid #00b894; /* green line */
+  text-align: center;
+}
+
+/* About details heading */
+.about-details h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #1e90ff;
+  margin-bottom: 20px;
+}
+
+/* Paragraphs in about details */
+.about-details p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 20px auto; /* centered with bottom space */
+  color: #111827;
+}
+
+/* Footer style */
+footer {
+  background: #1a2a45; /* soft navy */
+  color: #d1d5db; /* light gray text */
+  text-align: center;
+  padding: 15px;
   font-size: 14px;
 }
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  /* Stack about hero elements vertically */
+  .about-hero {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Make about text and image full width */
+  .about-text, .about-image {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Less padding on sides */
+  main {
+    padding: 0 12px;
+  }
+
+  /* Smaller headings on mobile */
+  .about-text h2 {
+    font-size: 32px;
+  }
+
+  .about-details h3 {
+    font-size: 24px;
+  }
+}
+
+
