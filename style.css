@@ -304,3 +304,73 @@ footer {
 }
 
 
+/* Base44 API demo section */
+.api-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.api-section h2 {
+  margin-bottom: 10px;
+}
+
+.api-note {
+  color: #6b7280; /* gray-500 */
+  margin-bottom: 16px;
+}
+
+.api-config,
+.api-update-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+.api-config label,
+.api-update-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.api-config input,
+.api-update-form input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+
+.api-update-form .checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.api-actions {
+  margin: 12px 0 8px;
+}
+
+.code-block {
+  background: #0b1220; /* dark navy */
+  color: #e5e7eb; /* gray-200 */
+  padding: 14px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 10px;
+  min-height: 96px;
+}
+
+.disclaimer {
+  margin-top: 14px;
+  color: #6b7280; /* gray-500 */
+  font-size: 14px;
+}
+

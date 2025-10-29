@@ -55,6 +55,73 @@
         </blockquote>
     </section>
 
+    <!-- Base44 Demo Section -->
+    <section class="api-section" id="base44-section">
+        <h2>Base44 Transactions (Demo)</h2>
+        <p class="api-note">
+          Enter your Base44 API key at runtime. It will be stored locally in your browser only.
+        </p>
+
+        <div class="api-config">
+            <label>
+                API Key
+                <input type="password" id="apiKeyInput" placeholder="Enter API key" autocomplete="off" />
+            </label>
+            <label>
+                App ID
+                <input type="text" id="appIdInput" value="68d1670d5dc82f381520d0ee" />
+            </label>
+            <button id="saveApiConfigBtn" class="cta-btn" type="button">Save API Config</button>
+        </div>
+
+        <div class="api-actions">
+            <button id="loadTransactionsBtn" class="cta-btn" type="button">Load Transactions</button>
+        </div>
+        <pre id="transactionsOutput" class="code-block" aria-live="polite"></pre>
+
+        <hr />
+        <h3>Update Transaction</h3>
+        <div class="api-update-form">
+            <label>
+                Entity ID
+                <input type="text" id="entityIdInput" placeholder="Transaction ID" />
+            </label>
+            <label>
+                Description
+                <input type="text" id="descriptionInput" placeholder="New description" />
+            </label>
+            <label>
+                Amount
+                <input type="number" id="amountInput" step="0.01" placeholder="0.00" />
+            </label>
+            <label>
+                Category
+                <input type="text" id="categoryInput" placeholder="e.g., Groceries" />
+            </label>
+            <label>
+                Date
+                <input type="date" id="dateInput" />
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" id="isSharedInput" /> Is Shared
+            </label>
+            <label>
+                Shared With (comma-separated)
+                <input type="text" id="sharedWithInput" placeholder="alice@example.com,bob@example.com" />
+            </label>
+            <label>
+                Semester
+                <input type="text" id="semesterInput" placeholder="e.g., Fall 2025" />
+            </label>
+            <button id="updateTransactionBtn" class="cta-btn" type="button">Update</button>
+        </div>
+        <pre id="updateOutput" class="code-block" aria-live="polite"></pre>
+
+        <p class="disclaimer">
+            Do not hardcode API keys in client-side code. Use a backend proxy for production.
+        </p>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Mosave. All rights reserved.</p>
