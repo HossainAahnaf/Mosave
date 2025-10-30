@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MoSave Snapshot</title>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        min-width: 240px;
+        margin: 0;
+        padding: 16px;
+        background: #f5f7ff;
+      }
+      h1 {
+        font-size: 16px;
+        margin: 0 0 12px;
+        color: #314cff;
+      }
+      button {
+        width: 100%;
+        border: none;
+        border-radius: 999px;
+        padding: 10px;
+        background: #314cff;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MoSave Snapshot</h1>
+    <p>Highlight a receipt and tap to send it to your dashboard.</p>
+    <button id="send">Send current tab</button>
+    <script>
+      document.getElementById('send').addEventListener('click', async () => {
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          func: () => {
+            const text = document.body.innerText;
+            chrome.runtime.sendMessage({ type: 'MOSAVE_RECEIPT', payload: { text } });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

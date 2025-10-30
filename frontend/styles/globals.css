@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f9fbff;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
+
+a {
+  @apply text-primary-600 hover:text-primary-700 transition-colors;
+}
+
+.card {
+  @apply bg-white rounded-3xl shadow-xl shadow-primary-50/50 border border-slate-100;
+}
+
+.section-title {
+  @apply text-xl font-semibold text-slate-800 flex items-center gap-2;
+}
+
+.narrative {
+  @apply text-sm text-slate-500 leading-relaxed;
+}
