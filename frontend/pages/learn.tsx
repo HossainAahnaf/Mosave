@@ -14,7 +14,7 @@ const LearnPage = () => {
       >
         <section className="grid gap-6 md:grid-cols-[1.2fr,0.8fr]">
           <div className="card flex flex-col gap-4 p-6">
-            <h2 className="section-title">Today's learning lane</h2>
+            <h2 className="section-title">Today&apos;s learning lane</h2>
             <p className="narrative">
               Based on your recent overspend in groceries, Mo recommends a two-step pathway. Finish both to boost your
               Financial IQ score and unlock community badges.
