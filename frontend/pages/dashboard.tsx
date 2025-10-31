@@ -1,12 +1,15 @@
 import Head from "next/head";
+import AuthGuard from "@/components/AuthGuard";
 import Layout from "@/components/Layout";
 import { FinanceChart } from "@/components/FinanceChart";
 import { GoalCard } from "@/components/GoalCard";
 import { MoChat } from "@/components/MoChat";
 import { useExpenses } from "@/hooks/useExpenses";
+import { useGoals } from "@/hooks/useGoals";
 
 const DashboardPage = () => {
   const { summary, transactions, isLoading } = useExpenses();
+  const { goals } = useGoals();
 
   const labels = summary.map((item) => item.month);
   const incomeSeries = summary.map((item) => item.income);
@@ -41,7 +44,7 @@ const DashboardPage = () => {
   ];
 
   return (
-    <>
+    <AuthGuard>
       <Head>
         <title>MoSave Dashboard</title>
       </Head>
@@ -77,8 +80,16 @@ const DashboardPage = () => {
           <MoChat />
         </section>
         <section className="grid gap-6 md:grid-cols-2">
-          <GoalCard title="Emergency fund" targetAmount={1500} currentAmount={840} dueDate="2025-02-14" streak={12} />
-          <GoalCard title="College utilities" targetAmount={600} currentAmount={420} dueDate="2024-12-01" streak={5} />
+          {goals.map((goal) => (
+            <GoalCard
+              key={goal.id}
+              title={goal.title}
+              targetAmount={goal.targetAmount}
+              currentAmount={goal.currentAmount}
+              dueDate={goal.dueDate ?? new Date().toISOString().slice(0, 10)}
+              streak={goal.streakDays}
+            />
+          ))}
         </section>
         <section className="card p-6">
           <h3 className="section-title">Latest activity</h3>
@@ -106,7 +117,7 @@ const DashboardPage = () => {
           </div>
         </section>
       </Layout>
-    </>
+    </AuthGuard>
   );
 };
 

@@ -1,5 +1,7 @@
 import { FormEvent, useState } from "react";
 import Head from "next/head";
+
+import AuthGuard from "@/components/AuthGuard";
 import Layout from "@/components/Layout";
 import { useSimulation, SimulationInput } from "@/hooks/useSimulation";
 
@@ -22,7 +24,7 @@ const SimulatorPage = () => {
   };
 
   return (
-    <>
+    <AuthGuard>
       <Head>
         <title>MoSave What-If Simulator</title>
       </Head>
@@ -109,7 +111,7 @@ const SimulatorPage = () => {
           </ul>
         </section>
       </Layout>
-    </>
+    </AuthGuard>
   );
 };
 

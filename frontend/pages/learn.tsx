@@ -1,10 +1,12 @@
 import Head from "next/head";
+
+import AuthGuard from "@/components/AuthGuard";
 import Layout from "@/components/Layout";
 import { QuizCard } from "@/components/QuizCard";
 
 const LearnPage = () => {
   return (
-    <>
+    <AuthGuard>
       <Head>
         <title>MoSave Learn</title>
       </Head>
@@ -52,7 +54,7 @@ const LearnPage = () => {
           </div>
         </section>
       </Layout>
-    </>
+    </AuthGuard>
   );
 };
 

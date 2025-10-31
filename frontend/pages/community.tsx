@@ -1,9 +1,11 @@
 import Head from "next/head";
+
+import AuthGuard from "@/components/AuthGuard";
 import Layout from "@/components/Layout";
 
 const CommunityPage = () => {
   return (
-    <>
+    <AuthGuard>
       <Head>
         <title>MoSave Community</title>
       </Head>
@@ -67,7 +69,7 @@ const CommunityPage = () => {
           </div>
         </section>
       </Layout>
-    </>
+    </AuthGuard>
   );
 };
 

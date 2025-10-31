@@ -11,7 +11,11 @@ poetry install
 poetry run uvicorn backend.app:app --reload
 ```
 
-Environment variables can be stored in `.env` (see `app/config.py` for available fields).
+Environment variables can be stored in `.env` (see `app/config.py` for available fields). At minimum set:
+
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY` (for privileged inserts/aggregations)
+- `OPENAI_API_KEY` (Phase 2+)
 
 ## Endpoints
 
@@ -24,7 +28,7 @@ Environment variables can be stored in `.env` (see `app/config.py` for available
 
 - `ml/recommender.py` – stub reinforcement learning loop
 - `ml/predictor.py` – simple regression placeholder for savings projections
-- `db/schema.sql` – Supabase/Postgres schema
+- `db/schema.sql` – Supabase/Postgres schema (creates profiles, households, expenses, budgets, goals + RLS)
 - `db/seed_data.sql` – development seed data
 
 Swap these with production-ready models or connect to LangChain pipelines.

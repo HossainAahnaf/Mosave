@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
+import { useAuth } from "@/contexts/AuthContext";
+
 type LayoutProps = {
   title?: string;
   description?: string;
@@ -15,6 +17,9 @@ const navItems = [
 ];
 
 export const Layout = ({ title = "MoSave", description, children }: LayoutProps) => {
+  const { supabase, user, households, activeHouseholdId, setActiveHousehold, signOut } = useAuth();
+  const isAuthenticated = Boolean(supabase && user);
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div className="pointer-events-none absolute inset-x-0 top-[-240px] h-[520px] rounded-[50%] bg-[radial-gradient(circle_farthest-corner_at_10%_20%,rgba(49,76,255,0.25),transparent_65%)] blur-[90px]" />
@@ -34,15 +39,40 @@ export const Layout = ({ title = "MoSave", description, children }: LayoutProps)
               </Link>
             ))}
           </nav>
-          <Link
-            href="/dashboard"
-            className="hidden rounded-full bg-gradient-to-r from-primary-500 via-primary-500 to-primary-400 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 transition hover:shadow-xl hover:shadow-primary-500/30 md:inline-flex"
-          >
-            Launch App
-          </Link>
+          <div className="hidden items-center gap-3 md:flex">
+            {isAuthenticated && households.length ? (
+              <select
+                value={activeHouseholdId ?? households[0].id}
+                onChange={(event) => setActiveHousehold(event.target.value)}
+                className="rounded-full border border-white/70 bg-white/70 px-4 py-2 text-xs font-medium text-slate-600 shadow-inner focus:border-primary-300 focus:outline-none"
+              >
+                {households.map((household) => (
+                  <option key={household.id} value={household.id}>
+                    {household.name}
+                  </option>
+                ))}
+              </select>
+            ) : null}
+            {isAuthenticated ? (
+              <button
+                type="button"
+                onClick={signOut}
+                className="rounded-full border border-primary-200/60 bg-white/70 px-4 py-2 text-xs font-semibold text-primary-600 shadow hover:border-primary-300"
+              >
+                Sign out
+              </button>
+            ) : (
+              <Link
+                href="/signin"
+                className="rounded-full bg-gradient-to-r from-primary-500 via-primary-500 to-primary-400 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 transition hover:shadow-xl hover:shadow-primary-500/30"
+              >
+                Launch App
+              </Link>
+            )}
+          </div>
           <button
             type="button"
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-500 shadow"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-500 shadow md:hidden"
             aria-label="Open navigation"
           >
             ☰
