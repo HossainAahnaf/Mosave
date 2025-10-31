@@ -1,0 +1,27 @@
+[
+  {
+    "id": "lesson-budgeting-basics",
+    "title": "Budgeting Basics",
+    "type": "micro_lesson",
+    "duration_minutes": 5,
+    "trigger": "overspend_groceries",
+    "summary": "Set up a 50/30/20 plan with envelopes tailored to your spending patterns.",
+    "actions": [
+      "Review monthly cash flow",
+      "Assign categories",
+      "Automate savings transfer"
+    ]
+  },
+  {
+    "id": "quiz-grocery-gameplan",
+    "title": "Grocery Gameplan",
+    "type": "quiz",
+    "duration_minutes": 4,
+    "trigger": "meal_planning_prompt",
+    "summary": "Quiz reinforces smart meal prepping and bulk buying habits.",
+    "actions": [
+      "Track weekly grocery list",
+      "Score 3/4 or better to earn +12 IQ"
+    ]
+  }
+]

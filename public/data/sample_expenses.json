@@ -1,0 +1,32 @@
+{
+  "summary": [
+    { "month": "July", "income": 2100, "expenses": 1680, "savings": 420 },
+    { "month": "August", "income": 2050, "expenses": 1710, "savings": 340 },
+    { "month": "September", "income": 2200, "expenses": 1765, "savings": 435 }
+  ],
+  "transactions": [
+    {
+      "id": "tx-001",
+      "category": "Groceries",
+      "amount": 185.4,
+      "occurredOn": "2024-09-04",
+      "householdId": "household-001",
+      "notes": "Trader Joe's"
+    },
+    {
+      "id": "tx-002",
+      "category": "Utilities",
+      "amount": 132.75,
+      "occurredOn": "2024-09-01",
+      "householdId": "household-001"
+    },
+    {
+      "id": "tx-003",
+      "category": "Transport",
+      "amount": 68.95,
+      "occurredOn": "2024-09-03",
+      "householdId": "household-001",
+      "notes": "Metro card top-up"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "household-001",
+    "name": "Independence House",
+    "members": [
+      { "id": "u-amy", "age": 19, "role": "student", "city": "Atlanta" },
+      { "id": "u-malik", "age": 21, "role": "barista", "city": "Atlanta" }
+    ],
+    "financial_iq": 712,
+    "streak_days": 18,
+    "goals": [
+      { "title": "Emergency fund", "target": 1500, "current": 840, "due_date": "2025-02-14" },
+      { "title": "Campus utilities", "target": 600, "current": 420, "due_date": "2024-12-01" }
+    ]
+  }
+]
